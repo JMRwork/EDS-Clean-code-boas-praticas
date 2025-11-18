@@ -2,4 +2,4 @@
 
 ### [TP1](/TP1/Exercicios)
 
-### [TP2](/TP2/Exercicios)
+### [TP2](/TP2)
