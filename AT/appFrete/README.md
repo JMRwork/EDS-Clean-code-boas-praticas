@@ -123,12 +123,12 @@ public double calcularFrete() {
 }
 ```
 
-Trocado pelo [pacote de estratégia calculadora](/AT/appFrete/src/main/java/appFrete/service/calculadora/)
+Trocado pelo [pacote de estratégia calculadora](AT/appFrete/src/main/java/br/edu/infnet/appFrete/service/calculadora/)
 
 Essa troca ajuda a manter o código mais testável uma vez que divide uma única função em vários módulos,
 além de obedecer o principio Open/Closed do SOLID, onde essa estrutura permite uma expansibilidade do código sem alterar a função principal.
 
-Além disso, fiz um [Enum](/AT/appFrete/src/main/java/appFrete/model/TipoFrete.java) para formalizar o tipo de Frete e [Services](/AT/appFrete/src/main/java/appFrete/service/) para lidar com a lógica de montagem de etiquetas e de calculo de frete.
+Além disso, fiz um [Enum](AT/appFrete/src/main/java/br/edu/infnet/appFrete/model/TipoFrete.java) para formalizar o tipo de Frete e [Services](AT/appFrete/src/main/java/br/edu/infnet/appFrete/service/) para lidar com a lógica de montagem de etiquetas e de calculo de frete.
 
 2.
 Eu adicionei validações no construtor da classe Entrega, que substitui o modelo central de atributos do pedido. A validação poderia ser feita em classes separadas para cada atributo.
@@ -170,4 +170,5 @@ Além de reduzir drásticamente a necessidade de comentários que por muitas vez
 ### Testes
 
 > Testes feitos com JUnit e JaCoCo. Relatarório de Cobertura em [HTML](/AT/appFrete/target/site/jacoco/).
+
 
