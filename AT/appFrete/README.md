@@ -169,7 +169,8 @@ Além de reduzir drásticamente a necessidade de comentários que por muitas vez
 
 ### Testes
 
-> Testes feitos com JUnit e JaCoCo. Relatarório de Cobertura em [HTML](/AT/appFrete/target/site/jacoco/).
+> Testes feitos com JUnit e JaCoCo. Relatarório de Cobertura em [HTML](/AT/appFrete/target/site/jacoco/), para visualizar baixe o arquivo web index.HTML.
+
 
 
 
