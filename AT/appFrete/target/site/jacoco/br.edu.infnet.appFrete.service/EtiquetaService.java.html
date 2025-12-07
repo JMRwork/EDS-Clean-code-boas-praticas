@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EtiquetaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appFrete</a> &gt; <a href="index.source.html" class="el_package">br.edu.infnet.appFrete.service</a> &gt; <span class="el_source">EtiquetaService.java</span></div><h1>EtiquetaService.java</h1><pre class="source lang-java linenums">package br.edu.infnet.appFrete.service;
+
+import java.math.BigDecimal;
+
+import br.edu.infnet.appFrete.model.Entrega;
+import br.edu.infnet.appFrete.service.calculadora.CalculadoraFrete;
+
+public class EtiquetaService {
+	private CalculadoraFrete calculadoraFrete;
+
+<span class="fc" id="L11">	public EtiquetaService(CalculadoraFrete calculadora) {</span>
+<span class="fc" id="L12">		this.calculadoraFrete = calculadora;</span>
+<span class="fc" id="L13">	}</span>
+
+	public String gerarEtiqueta(Entrega entrega) {
+<span class="fc bfc" id="L16" title="All 2 branches covered.">		if (PromocaoService.isFreteGratis(entrega)) {</span>
+<span class="fc" id="L17">			return String.format(&quot;&quot;&quot;</span>
+					Destinatário: %s
+					Endereço: %s
+					Tipo de Frete: %s
+					Valor do Frete: GRÁTIS
+<span class="fc" id="L22">					&quot;&quot;&quot;, entrega.getDestinatario(), entrega.getEndereco(), entrega.getTipoFrete().getCodigo());</span>
+		}
+
+<span class="fc" id="L25">		BigDecimal valorFrete = calculadoraFrete.calcular(PromocaoService.getPesoComDesconto(entrega.getPeso()));</span>
+<span class="fc" id="L26">		return String.format(&quot;&quot;&quot;</span>
+				Destinatário: %s
+				Endereço: %s
+				Tipo de Frete: %s
+				Valor do Frete: R$%.2f
+<span class="fc" id="L31">				&quot;&quot;&quot;, entrega.getDestinatario(), entrega.getEndereco(), entrega.getTipoFrete().getCodigo(), valorFrete);</span>
+
+	}
+
+	public String gerarResumoPedido(Entrega entrega) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">		if (PromocaoService.isFreteGratis(entrega)) {</span>
+<span class="fc" id="L37">			return String.format(&quot;Pedido para %s com frete %s GRÁTIS&quot;, entrega.getDestinatario(),</span>
+<span class="fc" id="L38">					entrega.getTipoFrete().getCodigo());</span>
+		}
+		
+<span class="fc" id="L41">		BigDecimal valorFrete = calculadoraFrete.calcular(PromocaoService.getPesoComDesconto(entrega.getPeso()));</span>
+<span class="fc" id="L42">		return String.format(&quot;Pedido para %s com frete %s no valor de R$%.2f&quot;, entrega.getDestinatario(),</span>
+<span class="fc" id="L43">				entrega.getTipoFrete().getCodigo(), valorFrete);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

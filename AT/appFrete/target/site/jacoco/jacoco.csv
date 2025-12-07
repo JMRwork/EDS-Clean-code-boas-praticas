@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+appFrete,br.edu.infnet.appFrete,App,7,0,0,0,3,0,2,0,2,0
+appFrete,br.edu.infnet.appFrete.model,Entrega,0,66,2,8,0,18,2,9,0,6
+appFrete,br.edu.infnet.appFrete.model,TipoFrete,0,101,0,4,0,16,0,8,0,6
+appFrete,br.edu.infnet.appFrete.service,EntregaService,2,22,1,1,1,6,1,2,0,2
+appFrete,br.edu.infnet.appFrete.service,EtiquetaService,0,108,0,4,0,15,0,5,0,3
+appFrete,br.edu.infnet.appFrete.service,PromocaoService,3,35,0,6,1,7,1,6,1,3
+appFrete,br.edu.infnet.appFrete.factory,CalculadoraFreteFactory,10,35,1,1,2,8,2,2,1,2
+appFrete,br.edu.infnet.appFrete.service.calculadora,CalculadoraFreteEconomico,0,11,0,0,0,4,0,2,0,2
+appFrete,br.edu.infnet.appFrete.service.calculadora,CalculadoraFretePadrao,0,8,0,0,0,3,0,2,0,2
+appFrete,br.edu.infnet.appFrete.service.calculadora,CalculadoraFreteExpresso,0,11,0,0,0,4,0,2,0,2
